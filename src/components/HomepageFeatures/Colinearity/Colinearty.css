@@ -1,0 +1,291 @@
+/* !====================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  button{
+    cursor: pointer;
+  }
+  
+  #theory-wrap-cont,
+  #two-member-wrap,
+  .training-solution {
+    display: none;
+  }
+  
+  .training-sect {
+    width: 311px;
+    background: #FFE46C;
+    margin: 0 auto;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    padding: 25px 13px 20px 13px;
+  }
+  
+  .training-name {
+    color: #000;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+  
+  .training-btn-wrap {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 15px;
+    margin-bottom: 30px;
+  }
+  
+  .training-btn {
+    width: 177px;
+    height: 51px;
+    color: #FFF;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    border: 2px solid #2829EB;
+    background: #2829EB;
+    margin-top: 15px;
+  }
+  
+  .training-btn-active {
+    color: #2829EB;
+    border: 2px solid #2829EB;
+    background: transparent;
+  }
+  
+  .training-operation {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+  }
+  
+  .training-operation-text {
+    width: 251px;
+    color: #000;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 16px;
+  }
+  
+  .training-operation+.training-operation-text {
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+  }
+  
+  .training-operation+.training-operation-text::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    flex-grow: 0;
+    border: 2px solid #000000;
+    border-radius: 50%;
+    margin-right: 14px;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+  
+  .training-operation:not(:disabled):active+.training-operation-text::before {
+    background-color: transparent;
+    border-color: #000000;
+  }
+  
+  .training-operation:checked+.training-operation-text::before {
+    border-color: #000000;
+    background-size: 12px;
+  }
+  
+  .training-operation:checked+.training-operation-text>.training-operation-text-wrap {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+  }
+  
+  .training-operationbefore:disabled+.training-operation-text::before {
+    background-color: #000000;
+  }
+  
+  .member-wrap {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .member-input {
+    width: 100%;
+    border: 2px solid #2829EB;
+    background: transparent;
+    padding-left: 13px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .member-input,
+  .member-input::placeholder {
+    color: #2829EB;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  
+  .member-submit {
+    width: 253px;
+    height: 65px;
+    display: block;
+    border: 2px solid #2829EB;
+    background: #2829EB;
+    color: #FFF;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin: 0 auto;
+    margin-top: 24px;
+  }
+  
+  .training-solution {
+    width: 100%;
+    margin-top: 24px;
+  }
+  
+  .training-solution-name {
+    color: #000;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 21px;
+  }
+  
+  .training-solution-formule {
+    color: #000;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 13px;
+  }
+  
+  .training-solution-formule:nth-last-of-type(1) {
+    margin-bottom: 0;
+  }
+  
+  .theory-wrap-cont {
+    width: 100%;
+  }
+  
+  .theory-text {
+    color: #000;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    line-height: normal;
+    font-weight: 400;
+    margin-bottom: 30px;
+  }
+  
+  .theory-text-span {
+    font-weight: 700;
+  }
+  
+  .theory-formule {
+    color: #000;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 15px;
+  }
+  
+  @media(min-width:1200px) {
+    .training-sect {
+        width: 1161px;
+        padding: 29px 20px 29px 20px;
+    }
+  
+    .training-name {
+        font-size: 30px;
+        text-align: left;
+    }
+  
+    .training-btn-wrap {
+        justify-content: left;
+    }
+  
+    .training-btn {
+        width: 225px;
+        height: 65px;
+        margin-right: 54px;
+        font-size: 17px;
+    }
+  
+    .training-operation-text {
+        width: 1059px;
+    }
+  
+    .training-operation-text-wrap {
+        font-size: 17px;
+    }
+  
+    .member-input {
+        width: 381px;
+    }
+  
+    .member-input,
+    .member-input::placeholder {
+        font-size: 17px;
+    }
+  
+    .member-submit {
+        font-size: 17px;
+        width: 304px;
+        height: 65px;
+    }
+  
+    .training-solution-name{
+        font-size: 25px;
+    }
+  
+    .training-solution-formule{
+        font-size: 25px;
+    }
+  
+    .theory-text{
+        font-size: 25px;
+    }
+  
+    .theory-formule{
+        font-size: 25px;
+    }
+  
+    .member-wrap{
+        display: block;
+    }
+  }
