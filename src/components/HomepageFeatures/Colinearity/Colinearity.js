@@ -1,5 +1,5 @@
 import React from 'react';
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import '@site/src/components/HomepageFeatures/Colinearity/Colinearty.css'
 
 function Colinearity() {
@@ -7,7 +7,7 @@ const [typeColinearityMetr,setTypeColinearityMetr] = useState(true);
 const [firstVectorMetr,setFirstVectorMetr] = useState(true);
 const [secondVectorMetr,setSecindVectorMetr] = useState(true);
 const [solutionP,setSolutionP] = useState(null);
-const [solutionWr,setSolutionWr] = useState(null);
+const [changer,setChanger] = useState(true);
 
 const typeColinearity = ()=>{
   setTypeColinearityMetr(!typeColinearityMetr);
@@ -21,7 +21,6 @@ const secondVector = ()=>{
   setSecindVectorMetr(!secondVectorMetr);
 };
 
-useEffect(()=>{console.log(solutionP)},[solutionP])
 
 const solution = (e) =>{
 e.preventDefault();
@@ -30,36 +29,61 @@ if(typeColinearityMetr){
   if(firstVectorMetr){
     if(secondVectorMetr){
       parseFloat(formData[0].value)===0 ? setSolutionP((parseFloat(formData[1].value)/parseFloat(formData[3].value) === 1)) : setSolutionP((parseFloat(formData[0].value)/parseFloat(formData[2].value) === 1));
-      parseFloat(formData[0].value)===0 ? setSolutionWr([formData,1]) : setSolutionWr([formData,2]);
     }else{
       parseFloat(formData[0].value)===0 ? setSolutionP((parseFloat(formData[1].value)/(parseFloat(formData[5].value)-parseFloat(formData[3].value)) === 1)) : setSolutionP((parseFloat(formData[0].value)/(parseFloat(formData[4].value)-parseFloat(formData[2]).value) === 1));
-      parseFloat(formData[0].value)===0 ? setSolutionWr([formData,3]) : setSolutionWr([formData,4]);
     };
   }else{
     if(secondVectorMetr){
       parseFloat(formData[0].value)===0 ? setSolutionP(((parseFloat(formData[3].value)-parseFloat(formData[1].value))/parseFloat(formData[5].value) === 1)) : setSolutionP(((parseFloat(formData[2].value)-parseFloat(formData[0].value))/parseFloat(formData[4].value) === 1));
-      parseFloat(formData[0].value)===0 ? setSolutionWr([formData,5]) : setSolutionWr([formData,6]);
     }else{
       parseFloat(formData[0].value)===0 ? setSolutionP(((parseFloat(formData[3].value)-parseFloat(formData[1].value))/(parseFloat(formData[7].value)-parseFloat(formData[5].value)) === 1)) : setSolutionP(((parseFloat(formData[2].value)-parseFloat(formData[0].value))/(parseFloat(formData[6].value)-parseFloat(formData[4].value)) === 1));
-      parseFloat(formData[0].value)===0 ? setSolutionWr([formData,7]) : setSolutionWr([formData,8]);
     };
   };
 }else{
   if(firstVectorMetr){
     if(secondVectorMetr){
-      parseFloat(formData[0])===0 ? setSolutionP((parseFloat(formData[1])/parseFloat(formData[3]) === 1)) : setSolutionP((parseFloat(formData[0])/parseFloat(formData[2]) === 1));
-      parseFloat(formData[0])===0 ? setSolutionWr([formData,9]) : setSolutionWr([formData,10]);
+      if(parseFloat(formData[0].value)===0){
+        if(parseFloat(formData[1].value)===0){
+          setSolutionP((parseFloat(formData[2].value)/parseFloat(formData[5].value))===1);
+        }else{
+          setSolutionP((parseFloat(formData[1].value)/parseFloat(formData[4].value))===1);
+        }
+      }else{
+        setSolutionP((parseFloat(formData[0].value)/parseFloat(formData[3].value))===1);
+      }
     }else{
-      parseFloat(formData[0])===0 ? setSolutionP((parseFloat(formData[1])/(parseFloat(formData[5])-parseFloat(formData[3])) === 1)) : setSolutionP((parseFloat(formData[0])/(parseFloat(formData[4])-parseFloat(formData[2])) === 1));
-      parseFloat(formData[0])===0 ? setSolutionWr([formData,11]) : setSolutionWr([formData,12]);
+
+      if(parseFloat(formData[0].value)===0){
+        if(parseFloat(formData[1].value)===0){
+          setSolutionP((parseFloat(formData[0].value)/(parseFloat(formData[8].value)-parseFloat(formData[5].value)))===1);
+        }else{
+          setSolutionP((parseFloat(formData[1].value)/(parseFloat(formData[7].value)-parseFloat(formData[4].value)))===1);
+        }
+      }else{
+        setSolutionP((parseFloat(formData[0].value)/(parseFloat(formData[6].value)-parseFloat(formData[3].value)))===1);
+      }
     };
   }else{
     if(secondVectorMetr){
-      parseFloat(formData[0])===0 ? setSolutionP(((parseFloat(formData[3])-parseFloat(formData[1]))/parseFloat(formData[5]) === 1)) : setSolutionP(((parseFloat(formData[2])-parseFloat(formData[0]))/parseFloat(formData[4]) === 1));
-      parseFloat(formData[0])===0 ? setSolutionWr([formData,13]) : setSolutionWr([formData,14]);
+      if(parseFloat(formData[0].value)===0){
+        if(parseFloat(formData[1].value)===0){
+          setSolutionP((parseFloat(formData[2].value)/parseFloat(formData[5].value))===1);
+        }else{
+          setSolutionP((parseFloat(formData[1].value)/parseFloat(formData[4].value))===1);
+        }
+      }else{
+        setSolutionP((parseFloat(formData[0].value)/parseFloat(formData[3].value))===1);
+      }
     }else{
-      parseFloat(formData[0])===0 ? setSolutionP(((parseFloat(formData[3])-parseFloat(formData[1]))/(parseFloat(formData[7])-parseFloat(formData[5])) === 1)) : setSolutionP(((parseFloat(formData[2])-parseFloat(formData[0]))/(parseFloat(formData[6])-parseFloat(formData[4])) === 1));
-      parseFloat(formData[0])===0 ? setSolutionWr([formData,15]) : setSolutionWr([formData,16]);
+      if(parseFloat(formData[0].value)===0){
+        if(parseFloat(formData[1].value)===0){
+          setSolutionP(((parseFloat(formData[2].value)-parseFloat(formData[5].value))/(parseFloat(formData[11].value)-parseFloat(formData[8].value)))===1);
+        }else{
+          setSolutionP(((parseFloat(formData[1].value)-parseFloat(formData[4].value))/(parseFloat(formData[10].value)-parseFloat(formData[7].value)))===1);
+        }
+      }else{
+        setSolutionP(((parseFloat(formData[0].value)-parseFloat(formData[4].value))/(parseFloat(formData[9].value)-parseFloat(formData[6].value)))===1);
+      }
     };
   };
 };
@@ -67,12 +91,12 @@ if(typeColinearityMetr){
 
   return (
     <section className="training-sect">
-      {solutionP ? "Колінеарні" : "Не колінеарні"}
             <h2 className="training-name">Онлайн тренажер. Значення n-того члена арифметичної прогресії</h2>
             <div className="training-btn-wrap">
-                <button className="training-btn training-btn-active">Тренажер</button>
-                <button className="training-btn">Теорія</button>
+                <button className={`training-btn ${changer ? "training-btn-active" : ""}`} onClick={()=>{setChanger(true)}}>Тренажер</button>
+                <button className={`training-btn ${!changer ? "training-btn-active" : ""}`} onClick={()=>{setChanger(false)}}>Теорія</button>
             </div>
+            {changer ? (
             <div className="training-wrap-cont" id="training-wrap-cont">
 
               <label className="label-select" htmlFor="type-colinearity">
@@ -100,32 +124,34 @@ if(typeColinearityMetr){
               
                 <form className="member-wrap" onSubmit={solution}> 
                       {typeColinearityMetr}
-                    <label>
-                      Перший вектор
-                      {typeColinearityMetr ? (<>{firstVectorMetr ? (<>{"{"}<input className="point-input" type="number" defaultValue={0} required/>;<input className="point-input" type="number" defaultValue={0} required/>{"}"}</>) : (<>{"{"}<input className="point-input" type="number" defaultValue={0} required/>;<input className="point-input" type="number" defaultValue={0} required/>{"}"}<br/>{"{"}<input className="point-input" type="number" defaultValue={0} required/>;<input className="point-input" type="number" defaultValue={0} required/>{"}"}</>)}</>) : (<>{firstVectorMetr ? (<>{"{"}<input className="point-input" type="number" defaultValue={0} required/>;<input className="point-input" type="number" defaultValue={0} required/>;<input className="point-input" type="number" defaultValue={0} required/>{"}"}</>) : (<>{"{"}<input className="point-input" type="number" defaultValue={0} required/>;<input className="point-input" type="number" defaultValue={0} required/>;<input className="point-input" type="number" defaultValue={0} required/>{"}"}<br/>{"{"}<input className="point-input" type="number" defaultValue={0} required/>;<input className="point-input" type="number" defaultValue={0} required/>;<input className="point-input" type="number" defaultValue={0} required/>{"}"}</>)}</>)}
+                    <label className="label-select">
+                      Перший вектор<br/>
+                      {typeColinearityMetr ? (<>{firstVectorMetr ? (<>{" {"}<input className="point-input" type="number" defaultValue={0} required/> ; <input className="point-input" type="number" defaultValue={0} required/>{"}"}</>) : (<>{"{"}<input className="point-input" type="number" defaultValue={0} required/> ; <input className="point-input" type="number" defaultValue={0} required/>{"}"}<br/>{"{"}<input className="point-input" type="number" defaultValue={0} required/> ; <input className="point-input" type="number" defaultValue={0} required/>{"}"}</>)}</>) : (<>{firstVectorMetr ? (<>{"{"}<input className="point-input" type="number" defaultValue={0} required/> ; <input className="point-input" type="number" defaultValue={0} required/> ; <input className="point-input" type="number" defaultValue={0} required/>{"}"}</>) : (<>{"{"}<input className="point-input" type="number" defaultValue={0} required/> ; <input className="point-input" type="number" defaultValue={0} required/> ; <input className="point-input" type="number" defaultValue={0} required/>{"}"}<br/>{"{"}<input className="point-input" type="number" defaultValue={0} required/> ; <input className="point-input" type="number" defaultValue={0} required/> ; <input className="point-input" type="number" defaultValue={0} required/>{"}"}</>)}</>)}
                     </label><br/>
                     
-                    <label>
-                      Другий вектор
-                      {typeColinearityMetr ? (<>{secondVectorMetr ? (<>{"{"}<input className="point-input" type="number" defaultValue={0} required/>;<input className="point-input" type="number" defaultValue={0} required/>{"}"}</>) : (<>{"{"}<input className="point-input" type="number" defaultValue={0} required/>;<input className="point-input" type="number" defaultValue={0} required/>{"}"}<br/>{"{"}<input className="point-input" type="number" defaultValue={0} required/>;<input className="point-input" type="number" defaultValue={0} required/>{"}"}</>)}</>) : (<>{secondVectorMetr ? (<>{"{"}<input className="point-input" type="number" defaultValue={0} required/>;<input className="point-input" type="number" defaultValue={0} required/>;<input className="point-input" type="number" defaultValue={0} required/>{"}"}</>) : (<>{"{"}<input className="point-input" type="number" defaultValue={0} required/>;<input className="point-input" type="number" defaultValue={0} required/>;<input className="point-input" type="number" defaultValue={0} required/>{"}"}<br/>{"{"}<input className="point-input" type="number" defaultValue={0} required/>;<input className="point-input" type="number" defaultValue={0} required/>;<input className="point-input" type="number" defaultValue={0} required/>{"}"}</>)}</>)}
+                    <label className="label-select">
+                      Другий вектор<br/>
+                      {typeColinearityMetr ? (<>{secondVectorMetr ? (<>{" {"}<input className="point-input" type="number" defaultValue={0} required/> ; <input className="point-input" type="number" defaultValue={0} required/>{"}"}</>) : (<>{"{"}<input className="point-input" type="number" defaultValue={0} required/> ; <input className="point-input" type="number" defaultValue={0} required/>{"}"}<br/>{"{"}<input className="point-input" type="number" defaultValue={0} required/> ; <input className="point-input" type="number" defaultValue={0} required/>{"}"}</>)}</>) : (<>{secondVectorMetr ? (<>{"{"}<input className="point-input" type="number" defaultValue={0} required/> ; <input className="point-input" type="number" defaultValue={0} required/> ; <input className="point-input" type="number" defaultValue={0} required/>{"}"}</>) : (<>{"{"}<input className="point-input" type="number" defaultValue={0} required/> ; <input className="point-input" type="number" defaultValue={0} required/> ; <input className="point-input" type="number" defaultValue={0} required/>{"}"}<br/>{"{"}<input className="point-input" type="number" defaultValue={0} required/> ; <input className="point-input" type="number" defaultValue={0} required/> ; <input className="point-input" type="number" defaultValue={0} required/>{"}"}</>)}</>)}
                     </label>
                     <button className="member-submit">Перевірити колінеарність</button>
                 </form>
-                <div className="training-solution" id="one-training-solution">
+                <div className="training-solution" id="one-training-solution" style={{display:solutionP!==null ? "inline-block":"none"}}>
                     <h3 className="training-solution-name">Розв’язок:</h3>
-                    <p className="training-solution-formule">a<sub>i</sub> = a<sub>1</sub> + (i - 1)d</p>
-                    <p className="training-solution-formule">a<sub>n</sub> = a<sub>1</sub> + (n - 1)d</p>
-                    <p className="training-solution-formule">a<sub>n</sub> = a<sub>i</sub> + (n - i)d</p>
-                    <p className="training-solution-formule" id="one-training-solution-formule"></p>
+                    <p className="training-solution-formule">n = a<sub>x</sub> / b<sub>x</sub></p>
+                    <p className="training-solution-formule">Вектори a і b колінеарні, якщо b = n · a</p>
+                    <p className="training-solution-formule" id="one-training-solution-formule">Відповідь: {solutionP ? "вектори колінеарні":"вектори не колінеарні"}</p>
                 </div>
             </div>
-
+            ) : (
             <div className="theory-wrap-cont" id="theory-wrap-cont">
-                <h3 className="theory-text"><span className="theory-text-span">Арифметична прогресія</span> — послідовність чисел (членів прогресії), кожне з яких, починаючи з другого, отримується з попереднього шляхом додавання сталого числа d (кроку або різниці прогресії):</h3>
-                <p className="theory-formule">a<sub>1</sub>, a<sub>1</sub> + d, a<sub>1</sub> + 2<sub>d</sub>, ..., a<sub>1</sub> + (n - 1)d, ...</p>
-                <h3 className="theory-text"><span className="theory-text-span">Формула</span> — n-тий член арифметичної прогресії можна порахувати скориставшись наступною формулою:</h3>
-                <p className="theory-formule">a<sub>n</sub> = a<sub>1</sub> + d(n - 1)</p>
+                <h3 className="theory-text"><span className="theory-text-span">Колінеарні вектори</span> - вектори, які паралельні одній прямій або лежать на одній прямій.</h3>
+                <h3 className="theory-text"><span className="theory-text-span">Формула</span> якщо відношення їх відповідних координат рівні між собою.Наприклад два вектори a = {"{"}a<sub>x</sub>  a<sub>y</sub>  a<sub>z</sub>{"}"} і b = {"{"}b<sub>x</sub>  b<sub>y</sub>  b<sub>z</sub>{"}"} колінеарні якщо:<br/></h3>
+                <p className="theory-formule"><span class="drb"><font class="top">a<sub>x</sub></font>/<font class="btm">b<sub>x</sub></font></span> <span class="drb"><font class="top">a<sub>y</sub></font>/<font class="btm">b<sub>y</sub></font></span> <span class="drb"><font class="top">a<sub>z</sub></font>/<font class="btm">b<sub>z</sub></font></span></p><br/>
+                <h3 className="theory-text">або</h3>
+                <p className="theory-formule">b = n · a</p>
             </div>
+            )}
+
         </section>
   )
 }
