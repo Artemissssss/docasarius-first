@@ -1,8 +1,8 @@
 {
-  "label": "Модуль 1",
+  "label": "Математичні тренажери",
   "position": 1,
   "link": {
     "type": "generated-index",
-    "description": "Конспект з Python модуль 1"
+    "description": "Математичні тренажери для навчання"
   }
 }

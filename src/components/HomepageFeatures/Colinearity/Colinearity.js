@@ -91,7 +91,7 @@ if(typeColinearityMetr){
 
   return (
     <section className="training-sect">
-            <h2 className="training-name">Онлайн тренажер. Значення n-того члена арифметичної прогресії</h2>
+            <h2 className="training-name">Онлайн тренажер. Колінеарність векторів</h2>
             <div className="training-btn-wrap">
                 <button className={`training-btn ${changer ? "training-btn-active" : ""}`} onClick={()=>{setChanger(true)}}>Тренажер</button>
                 <button className={`training-btn ${!changer ? "training-btn-active" : ""}`} onClick={()=>{setChanger(false)}}>Теорія</button>
@@ -146,7 +146,7 @@ if(typeColinearityMetr){
             <div className="theory-wrap-cont" id="theory-wrap-cont">
                 <h3 className="theory-text"><span className="theory-text-span">Колінеарні вектори</span> - вектори, які паралельні одній прямій або лежать на одній прямій.</h3>
                 <h3 className="theory-text"><span className="theory-text-span">Формула</span> якщо відношення їх відповідних координат рівні між собою.Наприклад два вектори a = {"{"}a<sub>x</sub>  a<sub>y</sub>  a<sub>z</sub>{"}"} і b = {"{"}b<sub>x</sub>  b<sub>y</sub>  b<sub>z</sub>{"}"} колінеарні якщо:<br/></h3>
-                <p className="theory-formule"><span class="drb"><font class="top">a<sub>x</sub></font>/<font class="btm">b<sub>x</sub></font></span> <span class="drb"><font class="top">a<sub>y</sub></font>/<font class="btm">b<sub>y</sub></font></span> <span class="drb"><font class="top">a<sub>z</sub></font>/<font class="btm">b<sub>z</sub></font></span></p><br/>
+                <p className="theory-formule"><span className="drb"><font className="top">a<sub>x</sub></font>/<font className="btm">b<sub>x</sub></font></span> <span className="drb"><font className="top">a<sub>y</sub></font>/<font className="btm">b<sub>y</sub></font></span> <span className="drb"><font className="top">a<sub>z</sub></font>/<font className="btm">b<sub>z</sub></font></span></p><br/>
                 <h3 className="theory-text">або</h3>
                 <p className="theory-formule">b = n · a</p>
             </div>
