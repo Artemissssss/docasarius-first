@@ -83,7 +83,7 @@ const config = {
             items: [
               {
                 label: 'Tutorial',
-                to: '/docs/category/модуль-1',
+                to: '/docs/category/математичні-тренажери',
               },
             ],
           },
