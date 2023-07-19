@@ -28,7 +28,7 @@ function Progresion() {
                     <input type="number" className="member-input" placeholder="Ведіть значення a" min={0} required/>
                     <input type="number" className="member-input" placeholder="Ведіть значення b"  min={0} required/>
                     <input type="number" className="member-input" placeholder="Ведіть значення h"  min={0} required/>
-                        <button className="member-submit">Знайти об'єм призми</button>
+                        <button className="member-submit">Знайти об'єм паралелепіпеда</button>
                     </form>
                     <div className="training-solution" id="one-training-solution" style={{display:solutionP!==null ? "inline-block":"none"}}>
                         <h3 className="training-solution-name">Розв’язок:</h3>
