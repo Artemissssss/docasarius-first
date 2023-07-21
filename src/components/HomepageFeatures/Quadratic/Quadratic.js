@@ -26,7 +26,7 @@ setSolutionData([parseFloat(formData[0].value),parseFloat(formData[1].value),par
 
   return (
     <section className="training-sect">
-            <h2 className="training-name">Онлайн тренажер. Колінеарність векторів</h2>
+            <h2 className="training-name">Онлайн тренажер. Квадратні рівняння</h2>
             <div className="training-btn-wrap">
                 <button className={`training-btn ${changer ? "training-btn-active" : ""}`} onClick={()=>{setChanger(true)}}>Тренажер</button>
                 <button className={`training-btn ${!changer ? "training-btn-active" : ""}`} onClick={()=>{setChanger(false)}}>Теорія</button>
