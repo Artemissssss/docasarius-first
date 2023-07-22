@@ -10,13 +10,6 @@ const [changer,setChanger] = useState(true);
 const [solutionP,setSolutionP] = useState([null]);
 const [solutionData,setSolutionData] = useState([]);
 
-function QuadraticResult (formData) {
-  setSolutionP([((-1*(parseFloat(formData[1].value))-Math.sqrt((parseFloat(formData[1].value)*parseFloat(formData[1].value))-4*parseFloat(formData[0].value)*parseFloat(formData[2].value)))/2*parseFloat(formData[0].value)),((-1*(parseFloat(formData[1].value))+Math.sqrt((parseFloat(formData[1].value)*parseFloat(formData[1].value))-4*parseFloat(formData[0].value)*parseFloat(formData[2].value)))/2*parseFloat(formData[0].value))])
-  if((parseFloat(formData[1].value)*parseFloat(formData[1].value))-4*parseFloat(formData[0].value)*parseFloat(formData[2].value)<0){
-
-  }
-}
-
 const solution = (e) =>{
 e.preventDefault();
 const formData = e.target;
@@ -41,7 +34,7 @@ setSolutionData([parseFloat(formData[0].value),parseFloat(formData[1].value),par
                 </form>
                 <div className="training-solution" id="one-training-solution" style={{display:solutionP[0]!==null ? "inline-block":"none"}}>
                     <h3 className="training-solution-name">Розв’язок:</h3>
-                    <p className="training-solution-formule">У квадратному рівнянні ax<sup>2</sup> + bx + c = 0<br/>a = 1<br/>b = 2<br/>c = 3</p>
+                    <p className="training-solution-formule">У квадратному рівнянні ay<sup>2</sup> + by + c = 0<br/>a = {solutionData[0]}<br/>b = {solutionData[1]}<br/>c = {solutionData[2]}</p>
                     <p className="training-solution-formule">x = (-b ± √D) / 2a, D = b<sup>2</sup> - 4ac</p>
                     <p className="training-solution-formule" id="one-training-solution-formule">Відповідь: {solutionP[0] ? `${solutionP[0]} та` : ""} {solutionP[1] ? `${solutionP[1]}` : ""} {solutionP[0] && solutionP[1] ? "":"рішень немає із за від'ємного дискрімінанта"}</p>
                     <p className="training-solution-formule" id="one-training-solution-formule">Графік y = {solutionData[0] === 1 ? "" : solutionData[0]}x<sup>2</sup> {solutionData[1]>=0 ? `+${solutionData[1]}` : setSolutionData[1]}x {solutionData[2]>=0 ? `+${solutionData[2]}` : solutionData[2]}<br/></p>
@@ -57,7 +50,7 @@ setSolutionData([parseFloat(formData[0].value),parseFloat(formData[1].value),par
                 <h3 className="theory-text"><span className="theory-text-span">Квадратне рівняння</span> — це рівняння вигляду</h3>
                 <p className="theory-formule">a x<sup>2</sup> + b x + c = 0,</p>
                 <h3 className="theory-text">де a не дорівнює 0.</h3>
-                <h3 className="theory-text"><span className="theory-text-span">Розв'язати квадратне рівняння</span> означає знайти всі значення xi, для яких буде виконуватись рівність</h3>
+                <h3 className="theory-text"><span className="theory-text-span">Розв'язати квадратне рівняння</span> означає знайти всі значення x<sub>i</sub>, для яких буде виконуватись рівність</h3>
                 <p className="theory-formule">a x<sub>i</sub><sup>2</sup> + b x<sub>i</sub> + c = 0</p>
                 <h3 className="theory-text"><span className="theory-text-span">Методика розв'язання квадратних рівнянь.</span> Для розв'язання квадратного рівняння необхідно знайти дискримінант</h3>
                 <p className="theory-formule">D = b<sup>2</sup> - 4 a c</p>
