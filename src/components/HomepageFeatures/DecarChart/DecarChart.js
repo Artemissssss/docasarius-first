@@ -8,12 +8,7 @@ import '@site/src/components/HomepageFeatures/Quadratic/Quadratic.css';
 import "//unpkg.com/mathlive";
 import { nanoid } from 'nanoid'
 // const math = require('mathjs');
-var nerdamer = require('nerdamer'); 
-// Load additional modules. These are not required.  
-require('nerdamer/Algebra'); 
-require('nerdamer/Calculus'); 
-require('nerdamer/Solve'); 
-require('nerdamer/Extra');
+
 // import PolarFunctionPlot from '@site/src/components/HomepageFeatures/DecartChart/PolarFunctionPlot';
 function Colinearity() {
   const [changer,setChanger] = useState(true);
