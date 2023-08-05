@@ -149,11 +149,9 @@ button {
 .member-submit {
   width: 253px;
   height: 65px;
-  display: block;
   border: 2px solid #2829EB;
   background: #2829EB;
   color: #FFF;
-  text-align: center;
   font-family: 'Montserrat', sans-serif;
   font-size: 15px;
   font-style: normal;
@@ -161,6 +159,10 @@ button {
   line-height: normal;
   margin: 0 auto;
   margin-top: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }
 
 .training-solution {
